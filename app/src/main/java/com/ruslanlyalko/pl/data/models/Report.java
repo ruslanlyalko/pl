@@ -15,12 +15,12 @@ public class Report {
     public int totalBday;
     public int totalMk;
 
-    public int r60;
+    public int r80;
+    public int r50;
     public int r30;
-    public int r20;
     public int r10;
 
-    public int b50;
+    public int b70;
     public int b10;
     public int b30;
     public int bMk;
@@ -141,20 +141,20 @@ public class Report {
         return totalMk;
     }
 
-    public int getR60() {
-        return r60;
+    public int getR80() {
+        return r80;
+    }
+
+    public int getR50() {
+        return r50;
     }
 
     public int getR30() {
         return r30;
     }
 
-    public int getR20() {
-        return r20;
-    }
-
-    public int getB50() {
-        return b50;
+    public int getB70() {
+        return b70;
     }
 
     public int getB30() {
@@ -190,11 +190,11 @@ public class Report {
     }
 
     public void clearReport(boolean clearMK) {
-        r60 = 0;
+        r80 = 0;
+        r50 = 0;
         r30 = 0;
-        r20 = 0;
         r10 = 0;
-        b50 = 0;
+        b70 = 0;
         b10 = 0;
         b30 = 0;
         bMk = 0;

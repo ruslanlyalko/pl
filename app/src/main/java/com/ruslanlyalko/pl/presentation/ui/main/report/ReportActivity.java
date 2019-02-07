@@ -493,7 +493,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
         seekRoom60.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mReport.r60 = progress;
+                mReport.r80 = progress;
                 updateRoomTotal();
                 if (fromUser)
                     closeSoftKeyBoard();
@@ -510,7 +510,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
         seekRoom30.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mReport.r30 = progress;
+                mReport.r50 = progress;
                 updateRoomTotal();
                 if (fromUser)
                     closeSoftKeyBoard();
@@ -527,7 +527,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
         seekRoom20.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mReport.r20 = progress;
+                mReport.r30 = progress;
                 updateRoomTotal();
                 if (fromUser)
                     closeSoftKeyBoard();
@@ -561,7 +561,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
         seekBday50.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mReport.b50 = progress;
+                mReport.b70 = progress;
                 updateBdayTotal();
                 if (fromUser)
                     closeSoftKeyBoard();
@@ -726,7 +726,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
                 } catch (Exception e) {
                     //eat it
                 }
-                mReport.r60 = value;
+                mReport.r80 = value;
                 updateSeekBars();
             }
 
@@ -753,7 +753,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
                 } catch (Exception e) {
                     //eat it
                 }
-                mReport.r30 = value;
+                mReport.r50 = value;
                 updateSeekBars();
             }
 
@@ -780,7 +780,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
                 } catch (Exception e) {
                     //eat it
                 }
-                mReport.r20 = value;
+                mReport.r30 = value;
                 updateSeekBars();
             }
 
@@ -834,7 +834,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
                 } catch (Exception e) {
                     //eat it
                 }
-                mReport.b50 = value;
+                mReport.b70 = value;
                 updateSeekBars();
             }
 
@@ -1204,19 +1204,19 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
      */
     @SuppressLint("SetTextI18n")
     void updateRoomTotal() {
-        textRoom60.setText("80 грн х " + mReport.r60 + " = " + (mReport.r60 * 80) + " ГРН");
-        textRoom30.setText("50 грн х " + mReport.r30 + " = " + (mReport.r30 * 50) + " ГРН");
-        textRoom20.setText("30 грн х " + mReport.r20 + " = " + (mReport.r20 * 30) + " ГРН");
+        textRoom60.setText("80 грн х " + mReport.r80 + " = " + (mReport.r80 * 80) + " ГРН");
+        textRoom30.setText("50 грн х " + mReport.r50 + " = " + (mReport.r50 * 50) + " ГРН");
+        textRoom20.setText("30 грн х " + mReport.r30 + " = " + (mReport.r30 * 30) + " ГРН");
         textRoom10.setText("10 грн х " + mReport.r10 + " = " + (mReport.r10 * 10) + " ГРН");
         if (!inputRoom60.hasFocus())
-            inputRoom60.setText(String.valueOf(mReport.r60));
+            inputRoom60.setText(String.valueOf(mReport.r80));
         if (!inputRoom30.hasFocus())
-            inputRoom30.setText(String.valueOf(mReport.r30));
+            inputRoom30.setText(String.valueOf(mReport.r50));
         if (!inputRoom20.hasFocus())
-            inputRoom20.setText(String.valueOf(mReport.r20));
+            inputRoom20.setText(String.valueOf(mReport.r30));
         if (!inputRoom10.hasFocus())
             inputRoom10.setText(String.valueOf(mReport.r10));
-        mReport.totalRoom = mReport.r60 * 80 + mReport.r30 * 50 + mReport.r20 * 30 + mReport.r10 * 10;
+        mReport.totalRoom = mReport.r80 * 80 + mReport.r50 * 50 + mReport.r30 * 30 + mReport.r10 * 10;
         String total = DateUtils.getIntWithSpace(mReport.totalRoom) + " ГРН";
         textRoomTotal.setText(total);
         updateTitle();
@@ -1229,18 +1229,18 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
      */
     @SuppressLint("SetTextI18n")
     void updateBdayTotal() {
-        textBday50.setText("Кімната: 70 грн х " + mReport.b50 + " = " + (mReport.b50 * 70) + " ГРН");
+        textBday50.setText("Кімната: 70 грн х " + mReport.b70 + " = " + (mReport.b70 * 70) + " ГРН");
         textBday10.setText("Кімната: 10 грн х " + mReport.b10 + " = " + (mReport.b10 * 10) + " ГРН");
         textBday30.setText("МК: 30 грн х " + mReport.b30 + " = " + (mReport.b30 * 30) + " ГРН");
         String mkDone = getString(R.string.mk_done) + mReport.bMk;
         textBdayMk.setText(mkDone);
         if (!inputBday50.hasFocus())
-            inputBday50.setText(String.valueOf(mReport.b50));
+            inputBday50.setText(String.valueOf(mReport.b70));
         if (!inputBday10.hasFocus())
             inputBday10.setText(String.valueOf(mReport.b10));
         if (!inputBday30.hasFocus())
             inputBday30.setText(String.valueOf(mReport.b30));
-        mReport.totalBday = mReport.b50 * 70 + mReport.b10 * 10 + mReport.b30 * 30;
+        mReport.totalBday = mReport.b70 * 70 + mReport.b10 * 10 + mReport.b30 * 30;
         String total = DateUtils.getIntWithSpace(mReport.totalBday) + " ГРН";
         textBdayTotal.setText(total);
         updateTitle();
@@ -1288,11 +1288,11 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
      * Load values from Report to Seek Bars
      */
     void updateSeekBars() {
-        seekRoom60.setProgress(mReport.r60);
-        seekRoom30.setProgress(mReport.r30);
-        seekRoom20.setProgress(mReport.r20);
+        seekRoom60.setProgress(mReport.r80);
+        seekRoom30.setProgress(mReport.r50);
+        seekRoom20.setProgress(mReport.r30);
         seekRoom10.setProgress(mReport.r10);
-        seekBday50.setProgress(mReport.b50);
+        seekBday50.setProgress(mReport.b70);
         seekBday10.setProgress(mReport.b10);
         seekBday30.setProgress(mReport.b30);
         seekBdayMk.setProgress(mReport.bMk);
