@@ -1204,9 +1204,9 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
      */
     @SuppressLint("SetTextI18n")
     void updateRoomTotal() {
-        textRoom60.setText("60 грн х " + mReport.r60 + " = " + (mReport.r60 * 60) + " ГРН");
-        textRoom30.setText("30 грн х " + mReport.r30 + " = " + (mReport.r30 * 30) + " ГРН");
-        textRoom20.setText("20 грн х " + mReport.r20 + " = " + (mReport.r20 * 20) + " ГРН");
+        textRoom60.setText("80 грн х " + mReport.r60 + " = " + (mReport.r60 * 80) + " ГРН");
+        textRoom30.setText("50 грн х " + mReport.r30 + " = " + (mReport.r30 * 50) + " ГРН");
+        textRoom20.setText("30 грн х " + mReport.r20 + " = " + (mReport.r20 * 30) + " ГРН");
         textRoom10.setText("10 грн х " + mReport.r10 + " = " + (mReport.r10 * 10) + " ГРН");
         if (!inputRoom60.hasFocus())
             inputRoom60.setText(String.valueOf(mReport.r60));
@@ -1216,7 +1216,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
             inputRoom20.setText(String.valueOf(mReport.r20));
         if (!inputRoom10.hasFocus())
             inputRoom10.setText(String.valueOf(mReport.r10));
-        mReport.totalRoom = mReport.r60 * 60 + mReport.r30 * 30 + mReport.r20 * 20 + mReport.r10 * 10;
+        mReport.totalRoom = mReport.r60 * 80 + mReport.r30 * 50 + mReport.r20 * 30 + mReport.r10 * 10;
         String total = DateUtils.getIntWithSpace(mReport.totalRoom) + " ГРН";
         textRoomTotal.setText(total);
         updateTitle();
@@ -1229,7 +1229,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
      */
     @SuppressLint("SetTextI18n")
     void updateBdayTotal() {
-        textBday50.setText("Кімната: 50 грн х " + mReport.b50 + " = " + (mReport.b50 * 50) + " ГРН");
+        textBday50.setText("Кімната: 70 грн х " + mReport.b50 + " = " + (mReport.b50 * 70) + " ГРН");
         textBday10.setText("Кімната: 10 грн х " + mReport.b10 + " = " + (mReport.b10 * 10) + " ГРН");
         textBday30.setText("МК: 30 грн х " + mReport.b30 + " = " + (mReport.b30 * 30) + " ГРН");
         String mkDone = getString(R.string.mk_done) + mReport.bMk;
@@ -1240,7 +1240,7 @@ public class ReportActivity extends BaseActivity implements EasyPermissions.Perm
             inputBday10.setText(String.valueOf(mReport.b10));
         if (!inputBday30.hasFocus())
             inputBday30.setText(String.valueOf(mReport.b30));
-        mReport.totalBday = mReport.b50 * 50 + mReport.b10 * 10 + mReport.b30 * 30;
+        mReport.totalBday = mReport.b50 * 70 + mReport.b10 * 10 + mReport.b30 * 30;
         String total = DateUtils.getIntWithSpace(mReport.totalBday) + " ГРН";
         textBdayTotal.setText(total);
         updateTitle();

@@ -481,7 +481,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="8dp"
-                                        android:text="60 грн х 0 = 0 ГРН"
+                                        android:text="80 грн х 0 = 0 ГРН"
                                         android:textColor="@color/colorBlack" />
 
                                     <SeekBar
@@ -496,7 +496,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="16dp"
-                                        android:text="30 грн х 0 = 0 ГРН"
+                                        android:text="50 грн х 0 = 0 ГРН"
                                         android:textColor="@color/colorBlack" />
 
                                     <SeekBar
@@ -511,7 +511,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="16dp"
-                                        android:text="20 грн х 0 = 0 ГРН"
+                                        android:text="30 грн х 0 = 0 ГРН"
                                         android:textColor="@color/colorBlack" />
 
                                     <SeekBar
@@ -686,7 +686,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_marginTop="8dp"
-                                        android:text="Кімната: 50 грн х 0 = 0 ГРН"
+                                        android:text="Кімната: 70 грн х 0 = 0 ГРН"
                                         android:textColor="@color/colorBlack" />
 
                                     <SeekBar
