@@ -226,7 +226,7 @@
                     android:layout_margin="1dp"
                     android:layout_weight="1"
                     android:background="?android:attr/selectableItemBackground"
-                    android:drawableTop="@mipmap/ic_button_mk"
+                    android:drawableTop="@drawable/ic_button_mk"
                     android:paddingBottom="15dp"
                     android:paddingTop="32dp"
                     android:text="@string/button_calendar" />
@@ -270,7 +270,7 @@
                     android:layout_margin="1dp"
                     android:layout_weight="1"
                     android:background="?android:attr/selectableItemBackground"
-                    android:drawableTop="@mipmap/ic_button_cost"
+                    android:drawableTop="@drawable/ic_button_cost"
                     android:paddingBottom="16dp"
                     android:paddingTop="32dp"
                     android:text="@string/button_requisites" />
