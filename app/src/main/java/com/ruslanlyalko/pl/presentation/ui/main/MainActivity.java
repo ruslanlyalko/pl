@@ -96,6 +96,21 @@ public class MainActivity extends BaseActivity {
         sendRegistrationToServer(FirebaseInstanceId.getInstance().getToken());
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mSwipeOpened) {
+            mSwipeLayout.close();
+            return;
+        }
+        if (mDoubleBackToExitPressedOnce) {
+            finish();
+            return;
+        }
+        mDoubleBackToExitPressedOnce = true;
+        Toast.makeText(this, R.string.hint_double_press, Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> mDoubleBackToExitPressedOnce = false, 2000);
+    }
+
     private void initCurrentUser() {
         if (mAuth.getCurrentUser() == null) {
             finish();
@@ -110,7 +125,7 @@ public class MainActivity extends BaseActivity {
                         if (user != null) {
                             FirebaseUtils.setIsAdmin(user.getUserIsAdmin());
                             FirebaseUtils.setUser(user);
-                            if(isDestroyed())return;
+                            if (isDestroyed()) return;
                             mLayoutClients.setVisibility(user.getUserIsAdmin() || user.getShowClients() ? View.VISIBLE : View.GONE);
                         }
                     }
@@ -139,7 +154,7 @@ public class MainActivity extends BaseActivity {
         mSwipeLayout.addSwipeListener(new SwipeLayout.SwipeListener() {
             @Override
             public void onStartOpen(SwipeLayout layout) {
-                mArrowButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_down3, 0, 0);
+                mArrowButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_down_4, 0, 0);
             }
 
             @Override
@@ -149,7 +164,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onStartClose(SwipeLayout layout) {
-                mArrowButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_up3, 0, 0);
+                mArrowButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_up_4, 0, 0);
             }
 
             @Override
@@ -252,21 +267,6 @@ public class MainActivity extends BaseActivity {
         mLinkDetailsText.setText(mAppInfo.getTitle2());
         mLinkText.setVisibility(show ? View.VISIBLE : View.GONE);
         mLinkDetailsText.setVisibility(show ? View.VISIBLE : View.GONE);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mSwipeOpened) {
-            mSwipeLayout.close();
-            return;
-        }
-        if (mDoubleBackToExitPressedOnce) {
-            finish();
-            return;
-        }
-        mDoubleBackToExitPressedOnce = true;
-        Toast.makeText(this, R.string.hint_double_press, Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(() -> mDoubleBackToExitPressedOnce = false, 2000);
     }
 
     void setupShortCuts() {
